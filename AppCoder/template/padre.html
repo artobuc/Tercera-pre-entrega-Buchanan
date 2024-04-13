@@ -28,6 +28,23 @@
                 <a class="navbar-brand" href="{% url 'alta_alumnos' %}">Agregar_Alumnos</a>
                 <a class="navbar-brand" href="{% url 'profesores' %}">Profesores</a>
                 <a class="navbar-brand" href="{% url 'alta_profesores' %}">Agregar_Profesores</a>
+            
+                <a class="btn btn-primary" href="{% url 'Login' %}">Ingresar</a>
+                
+                <a class="btn btn-primary" href="{% url 'Register' %}">Registrate</a>
+                
+                {% if  request.user.is_authenticated %}
+                <img src="{{ url }}" alt="" width="100px" height="100px">
+                <p>Bienvenido, {{user.username}}</p>
+
+                
+                {% endif %}
+                
+                
+                
+                
+                
+                
             </div>
         </nav>
         <!-- Masthead-->

@@ -19,6 +19,12 @@
                 <td>{{n.id}}</td>
                 <td>{{n.nombre}}</td>
                 <td>{{n.camada}}</td>
+                
+                <td><a href="{% url 'elimina_curso' n.id %}" class="btn btn-danger btn-sm">BORRAR_CURSO</a></td>
+                <td><a href="{% url 'editar_curso'  n.id %}" class="btn btn-warning btn-sm">EDITAR_CURSO</a></td>
+                
+                
+                
             </tr>
             {% endfor %}
         </tbody>

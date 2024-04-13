@@ -4,24 +4,25 @@
 
 {% block contenido %}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>nombre</th>
-            <th>camada</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for n in profesores %}
-        <tr>
-            <td>{{n.id}}</td>
-            <td>{{n.nombre}}</td>
-            <td>{{n.camada}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>camada</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for n in profesores %}
+            <tr>
+                <td>{{n.id}}</td>
+                <td>{{n.nombre}}</td>
+                <td>{{n.camada}}</td>
+                <td><a href="{% url 'elimina_profesores' n.id %}" class="btn btn-danger btn-sm">BORRAR_PROFESOR</a></td>
+                <td><a href="{% url 'editar_profesores'  n.id %}" class="btn btn-warning btn-sm">EDITAR_PROFESOR</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
